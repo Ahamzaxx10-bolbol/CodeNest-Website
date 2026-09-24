@@ -59,13 +59,20 @@
             z-index: 1000;
         }
 
+        /* مجموعة اليمين: زر القائمة الجانبية + الشعار */
+        .header-right-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         .menu-toggle-btn {
             background: none;
             border: none;
             font-size: 1.8rem;
             color: var(--text-color);
             cursor: pointer;
-            display: none;
+            display: block; /* جعل القائمة الجانبية ظاهرة دائماً على كل الشاشات */
         }
 
         .logo-container {
@@ -275,13 +282,11 @@
             font-weight: 700;
         }
 
-        /* الوضع الفاتح: لون مميز عن الخلفية مع لمعان خفيف وناعم جداً */
         .hero-content .highlight {
             color: #ffffff;
             text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
         }
 
-        /* الوضع الداكن: اللون الأصفر مع لمعان خفيف وناعم */
         body.dark-mode .hero-content .highlight {
             color: var(--primary-color);
             text-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
@@ -383,9 +388,6 @@
             .navbar {
                 display: none;
             }
-            .menu-toggle-btn {
-                display: block;
-            }
         }
 
         @media (max-width: 768px) {
@@ -412,12 +414,13 @@
 
     <!-- رأس الصفحة -->
     <header>
-        <button class="menu-toggle-btn" onclick="toggleSidebar()">☰</button>
-
-        <a href="#home" class="logo-container">
-            <img src="Code Nest logo.png" alt="شعار شركة Code Nest" class="logo">
-            <h1>Code Nest</h1>
-        </a>
+        <div class="header-right-group">
+            <button class="menu-toggle-btn" onclick="toggleSidebar()">☰</button>
+            <a href="#home" class="logo-container">
+                <img src="Code Nest logo.png" alt="شعار شركة Code Nest" class="logo">
+                <h1>Code Nest</h1>
+            </a>
+        </div>
 
         <nav class="navbar">
             <ul>
